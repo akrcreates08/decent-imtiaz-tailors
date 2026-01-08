@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /assets/
+Disallow: /src/
+Disallow: /tools/
+Disallow: /README.md
+Disallow: /package.json
+Disallow: /.gitignore
+Disallow: /sitemap.xml
+Disallow: /robots.txt
+
+Allow: /

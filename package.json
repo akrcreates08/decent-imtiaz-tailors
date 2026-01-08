@@ -1,0 +1,34 @@
+{
+  "name": "lux-studio-website",
+  "version": "1.0.0",
+  "description": "A premium photography website showcasing services, portfolio, and contact information.",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server .",
+    "build": "echo 'Build process can be defined here'",
+    "deploy": "sh tools/deploy.sh"
+  },
+  "keywords": [
+    "photography",
+    "local business",
+    "portfolio",
+    "services"
+  ],
+  "author": "Your Name",
+  "license": "ISC",
+  "dependencies": {
+    "live-server": "^1.2.1"
+  },
+  "devDependencies": {},
+  "homepage": "http://yourwebsite.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/lux-studio-website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/lux-studio-website/issues"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decent Imtiaz Tailors - Custom Women's Wear Tailoring | Kurnool</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+            color: #333;
+        }
+
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 1rem 5%;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo svg {
+            width: 35px;
+            height: 35px;
+            fill: url(#gradient);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-gradient);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary-gradient);
+            transition: all 0.3s;
+            border-radius: 3px;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            text-align: center;
+            color: white;
+            z-index: 2;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.2s backwards;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.4s backwards;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #667eea;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #667eea;
+        }
+
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 20s infinite;
+        }
+
+        .shape1 { width: 300px; height: 300px; background: white; top: 10%; left: 10%; animation-delay: 0s; }
+        .shape2 { width: 200px; height: 200px; background: white; top: 60%; left: 70%; animation-delay: 5s; }
+        .shape3 { width: 150px; height: 150px; background: white; top: 30%; left: 80%; animation-delay: 10s; }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -50px) rotate(120deg); }
+            66% { transform: translate(-20px, 20px) rotate(240deg); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section Styling */
+        section {
+            padding: 5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 0.6s ease forwards;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:nth-child(1) { animation-delay: 0.1s; }
+        .service-card:nth-child(2) { animation-delay: 0.2s; }
+        .service-card:nth-child(3) { animation-delay: 0.3s; }
+        .service-card:nth-child(4) { animation-delay: 0.4s; }
+        .service-card:nth-child(5) { animation-delay: 0.5s; }
+
+        .service-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            transition: all 0.4s;
+        }
+
+        .service-card:hover .service-icon {
+            transform: rotateY(360deg) scale(1.1);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .service-price {
+            font-size: 2rem;
+            font-weight: bold;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 1.5rem 0 1rem 0;
+        }
+
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1.5rem 0;
+            text-align: left;
+        }
+
+        .service-features li {
+            padding: 0.6rem 0;
+            color: #555;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.7rem;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .service-features li:before {
+            content: "✓";
+            color: white;
+            background: var(--primary-gradient);
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            margin-top: 2px;
+        }
+
+        .btn-gradient {
+            background: var(--primary-gradient);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .btn-gradient:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Portfolio Section */
+        #portfolio {
+            background: #f8f9fa;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            cursor: pointer;
+            aspect-ratio: 4/5;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(102, 126, 234, 0.95), transparent);
+            padding: 2rem;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+            color: white;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            transform: translateY(0);
+        }
+
+        .portfolio-overlay h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .portfolio-overlay p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .lightbox img {
+            max-width: 100%;
+            max-height: 90vh;
+            border-radius: 10px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        /* Reviews Section */
+        .reviews-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .review-slider {
+            overflow: hidden;
+        }
+
+        .review-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .review-card {
+            min-width: 100%;
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .review-stars {
+            color: #ffd700;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .review-text {
+            font-style: italic;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .reviewer-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .reviewer-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #667eea;
+        }
+
+        .reviewer-name {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 2rem;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ddd;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .dot.active {
+            background: var(--primary-gradient);
+            width: 30px;
+            border-radius: 10px;
+        }
+
+        /* About Section */
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .about-text p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: #f8f9fa;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .contact-icon svg {
+            width: 28px;
+            height: 28px;
+            fill: white;
+        }
+
+        .contact-card h3 {
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .contact-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 400px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-gradient);
+            color: white;
+            padding: 3rem 5%;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: white;
+            color: #667eea;
+            transform: translateY(-3px);
+        }
+
+        .social-links svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                height: 100vh;
+                width: 70%;
+                background: white;
+                flex-direction: column;
+                padding: 5rem 2rem;
+                box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+                transition: right 0.3s;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 3rem 5%;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .service-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <svg viewBox="0 0 24 24" fill="none">
+                    <defs>
+                        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#667eea"/>
+                            <stop offset="100%" style="stop-color:#764ba2"/>
+                        </linearGradient>
+                    </defs>
+                    <!-- Women's Kurti/Dress Icon -->
+                    <path d="M12 1C10.5 1 9.5 2 9.5 3V4H8L6 6V8L5 9V23H19V9L18 8V6L16 4H14.5V3C14.5 2 13.5 1 12 1Z" fill="url(#gradient)"/>
+                    <!-- Neckline detail -->
+                    <ellipse cx="12" cy="4.5" rx="2" ry="1" fill="url(#gradient)" opacity="0.6"/>
+                    <!-- Side slits -->
+                    <path d="M7 18V23H8V18Z" fill="white" opacity="0.3"/>
+                    <path d="M16 18V23H17V18Z" fill="white" opacity="0.3"/>
+                    <!-- Decorative buttons -->
+                    <circle cx="12" cy="9" r="0.5" fill="white"/>
+                    <circle cx="12" cy="11" r="0.5" fill="white"/>
+                    <circle cx="12" cy="13" r="0.5" fill="white"/>
+                    <circle cx="12" cy="15" r="0.5" fill="white"/>
+                    <!-- Waist emphasis -->
+                    <path d="M7 10H17" stroke="white" stroke-width="0.5" opacity="0.4"/>
+                </svg>
+                <span>Decent Imtiaz Tailors</span>
+
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+    <div class="floating-shapes">
+        <div class="shape shape1"></div>
+        <div class="shape shape2"></div>
+        <div class="shape shape3"></div>
+    </div>
+    <div class="hero-content">
+        <h1>Custom Women's Wear Tailoring</h1>
+        <p>Perfect fit, personalized style</p>
+        <div class="hero-buttons">
+            <a href="#contact" class="btn btn-primary">Contact Us</a>
+            <a href="#services" class="btn btn-secondary">Explore Services</a>
+        </div>
+    </div>
+</section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-subtitle">Expert tailoring for every occasion</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">👗</div>
+                <h3>Designer Dress</h3>
+                <p>Custom-stitched dress with premium finish.</p>
+                <ul class="service-features">
+                    <li>Custom fabric & design selection</li>
+                    <li>Perfect body-fit measurements</li>
+                    <li>Length, neckline & sleeve customization</li>
+                </ul>
+                <div class="service-price">₹300 - ₹600</div>
+                <a href="#contact" class="btn-gradient">Book Now</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">👘</div>
+                <h3>Kurtis</h3>
+                <p>Traditional and contemporary kurti designs for every occasion.</p>
+                <ul class="service-features">
+                    <li>Designer patterns available</li>
+                    <li>Custom neck & sleeve designs</li>
+                    <li>Embroidery work included</li>
+                </ul>
+                <div class="service-price">₹500 - ₹1200</div>
+                <a href="#contact" class="btn-gradient">Book Now</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💃</div>
+                <h3>Churidars</h3>
+                <p>Elegant churidar sets with intricate detailing.</p>
+                <ul class="service-features">
+                    <li>Complete 3-piece set</li>
+                    <li>Dupatta stitching included</li>
+                    <li>Premium fancy work options</li>
+                </ul>
+                <div class="service-price">₹800 - ₹1500</div>
+                <a href="#contact" class="btn-gradient">Book Now</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🥻</div>
+                <h3>Sarees</h3>
+                <p>Custom saree blouses and fall-pico services.</p>
+                <ul class="service-features">
+                    <li>Blouse stitching & designs</li>
+                    <li>Fall & pico work</li>
+                    <li>Back neck patterns</li>
+                </ul>
+                <div class="service-price">₹400 - ₹1000</div>
+                <a href="#contact" class="btn-gradient">Book Now</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">✂️</div>
+                <h3>Alterations</h3>
+                <p>Professional alterations and repairs for all garments.</p>
+                <ul class="service-features">
+                    <li>Size adjustments & fitting</li>
+                    <li>Zipper & hem repairs</li>
+                    <li>Quick 2-3 day turnaround</li>
+                </ul>
+                <div class="service-price">₹150 - ₹500</div>
+                <a href="#contact" class="btn-gradient">Book Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+    <h2 class="section-title">Our Portfolio</h2>
+    <p class="section-subtitle">Showcasing our finest creations</p>
+    <div class="portfolio-grid">
+        <div class="portfolio-item" onclick="openLightbox(0)">
+            <img src="assets/images/designer-kurti.jpeg" alt="Designer Kurti">
+            <div class="portfolio-overlay">
+                <h3>Designer Kurti</h3>
+                <p>Elegant embroidered kurti with intricate work</p>
+            </div>
+        </div>
+        <div class="portfolio-item" onclick="openLightbox(1)">
+            <img src="assets/images/traditional-churidar.jpeg" alt="Traditional Churidar">
+            <div class="portfolio-overlay">
+                <h3>Traditional Churidar</h3>
+                <p>Classic churidar set with modern touch</p>
+            </div>
+        </div>
+        <div class="portfolio-item" onclick="openLightbox(2)">
+            <img src="assets/images/silk-pyjamas.jpeg" alt="Silk Pyjamas">
+            <div class="portfolio-overlay">
+                <h3>Silk Pyjamas</h3>
+                <p>Comfortable yet stylish loungewear</p>
+            </div>
+        </div>
+        <div class="portfolio-item" onclick="openLightbox(3)">
+            <img src="assets/images/saree-blouse.jpeg" alt="Saree Blouse">
+            <div class="portfolio-overlay">
+                <h3>Saree Blouse</h3>
+                <p>Custom blouse with perfect fit</p>
+            </div>
+        </div>
+        <div class="portfolio-item" onclick="openLightbox(4)">
+            <img src="assets/images/party-wear-kurti.jpeg" alt="Party Wear Kurti">
+            <div class="portfolio-overlay">
+                <h3>Party Wear Kurti</h3>
+                <p>Stunning party wear with detailed embellishments</p>
+            </div>
+        </div>
+        <div class="portfolio-item" onclick="openLightbox(5)">
+            <img src="assets/images/anarkali-suit.jpeg" alt="Anarkali Suit">
+            <div class="portfolio-overlay">
+                <h3>Anarkali Suit</h3>
+                <p>Graceful anarkali with flowing silhouette</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="closeLightbox()">×</button>
+            <img id="lightbox-img" src="" alt="">
+        </div>
+    </div>
+
+    <!-- Reviews Section -->
+    <section id="reviews">
+        <h2 class="section-title">What Our Clients Say</h2>
+        <p class="section-subtitle">Trusted by hundreds of satisfied customers</p>
+        <div class="reviews-container">
+            <div class="review-slider">
+                <div class="review-track" id="reviewTrack">
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"Imtiaz Tailors has been my go-to for all my tailoring needs for the past 5 years. The quality of work is exceptional and they always deliver on time. Highly recommended!"</p>
+                        <div class="reviewer-info">
+                            <img src="https://i.pravatar.cc/150?img=1" alt="Reviewer" class="reviewer-img">
+                            <div>
+                                <div class="reviewer-name">Fatima Khan</div>
+                                <div style="color: #999; font-size: 0.9rem;">Kurnool</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"Perfect fit every single time! They understand exactly what I want and the craftsmanship is outstanding. The attention to detail is what sets them apart."</p>
+                        <div class="reviewer-info">
+                            <img src="https://i.pravatar.cc/150?img=5" alt="Reviewer" class="reviewer-img">
+                            <div>
+                                <div class="reviewer-name">Ayesha Begum</div>
+                                <div style="color: #999; font-size: 0.9rem;">Kurnool</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"Best tailor in Kurnool! They transformed my ideas into beautiful reality. The quality of stitching and fabric handling is professional. Will always come back!"</p>
+                        <div class="reviewer-info">
+                            <img src="https://i.pravatar.cc/150?img=9" alt="Reviewer" class="reviewer-img">
+                            <div>
+                                <div class="reviewer-name">Zainab Ahmed</div>
+                                <div style="color: #999; font-size: 0.9rem;">Kurnool</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"I've tried many tailors but Imtiaz Tailors is simply the best. They understand women's fashion and always suggest the best designs. Very happy with their service!"</p>
+                        <div class="reviewer-info">
+                            <img src="https://i.pravatar.cc/150?img=20" alt="Reviewer" class="reviewer-img">
+                            <div>
+                                <div class="reviewer-name">Nisha Patel</div>
+                                <div style="color: #999; font-size: 0.9rem;">Kurnool</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-dots" id="sliderDots"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+<section id="about">
+  <h2 class="section-title" style="text-align: center;">About Decent Imtiaz Tailors</h2>
+  <p class="section-subtitle" style="text-align: center;">Crafting elegance for over a decade</p>
+
+  <div class="about-container" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 4rem;">
+    <div class="about-text" style="max-width: 900px; text-align: center;">
+      <h2>10+ Years of Excellence in Women's Tailoring</h2>
+
+      <p>
+        Decent Imtiaz Tailors has been serving the women of Kurnool with
+        exceptional tailoring services for over a decade. Our work is
+        rooted in precision, trust, and timeless craftsmanship.
+      </p>
+
+      <p>
+        From daily wear to bridal designs, every garment is custom-made
+        with careful attention to fit, fabric, and finishing — ensuring
+        elegance and comfort in every stitch.
+      </p>
+
+      <!-- Features Carousel -->
+      <div class="features-carousel" style="
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 2rem;
+        margin-top: 2rem;
+        padding-bottom: 1rem;
+      ">
+        <!-- Feature Item -->
+        <div class="feature-item" style="
+          flex: 0 0 250px;
+          scroll-snap-align: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 0.5rem;
+          background: #f9f9f9;
+          border-radius: 12px;
+          padding: 1rem;
+          min-width: 200px;
+        ">
+          <div class="feature-icon" style="
+            width:50px; height:50px;
+            background: var(--primary-gradient);
+            border-radius:12px;
+            display:flex; align-items:center; justify-content:center;
+            color:white; font-size:1.5rem;
+          ">✂️</div>
+          <strong>Expert Tailoring</strong>
+          <p>Decade-long experience in women’s wear</p>
+        </div>
+
+        <div class="feature-item" style="
+          flex: 0 0 250px;
+          scroll-snap-align: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 0.5rem;
+          background: #f9f9f9;
+          border-radius: 12px;
+          padding: 1rem;
+          min-width: 200px;
+        ">
+          <div class="feature-icon" style="
+            width:50px; height:50px;
+            background: var(--primary-gradient);
+            border-radius:12px;
+            display:flex; align-items:center; justify-content:center;
+            color:white; font-size:1.5rem;
+          ">📏</div>
+          <strong>Perfect Fit</strong>
+          <p>Personal measurements for every client</p>
+        </div>
+
+        <div class="feature-item" style="
+          flex: 0 0 250px;
+          scroll-snap-align: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 0.5rem;
+          background: #f9f9f9;
+          border-radius: 12px;
+          padding: 1rem;
+          min-width: 200px;
+        ">
+          <div class="feature-icon" style="
+            width:50px; height:50px;
+            background: var(--primary-gradient);
+            border-radius:12px;
+            display:flex; align-items:center; justify-content:center;
+            color:white; font-size:1.5rem;
+          ">⏱️</div>
+          <strong>On-Time Delivery</strong>
+          <p>Reliable and fast turnaround</p>
+        </div>
+
+        <div class="feature-item" style="
+          flex: 0 0 250px;
+          scroll-snap-align: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 0.5rem;
+          background: #f9f9f9;
+          border-radius: 12px;
+          padding: 1rem;
+          min-width: 200px;
+        ">
+          <div class="feature-icon" style="
+            width:50px; height:50px;
+            background: var(--primary-gradient);
+            border-radius:12px;
+            display:flex; align-items:center; justify-content:center;
+            color:white; font-size:1.5rem;
+          ">✨</div>
+          <strong>Premium Finish</strong>
+          <p>Clean stitching and quality fabrics</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Hide scrollbar nicely */
+  .features-carousel::-webkit-scrollbar {
+    display: none;
+  }
+  .features-carousel {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  /* Optional: Hover lift effect for desktop */
+  .feature-item:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s;
+  }
+
+  @media (min-width: 768px) {
+    /* Desktop: make features grid appear as normal row */
+    .features-carousel {
+      overflow: visible;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .feature-item {
+      flex: 0 0 auto;
+    }
+  }
+</style>
+
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">We'd love to hear from you</p>
+        <div class="contact-grid">
+            <a href="https://wa.me/919951943986" class="contact-card" target="_blank">
+                <div class="contact-icon">
+                    <svg viewBox="0 0 24 24" fill="white">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                    </svg>
+                </div>
+                <h3>WhatsApp</h3>
+                <p>Chat with us instantly</p>
+                <p style="color: #667eea; font-weight: 600;">+91 9951943986</p>
+            </a>
+            <a href="tel:+919951943986" class="contact-card">
+                <div class="contact-icon">
+                    <svg viewBox="0 0 24 24" fill="white">
+                        <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+                    </svg>
+                </div>
+                <h3>Phone</h3>
+                <p>Call us anytime</p>
+                <p style="color: #667eea; font-weight: 600;">+91 9951943986</p>
+            </a>
+            
+                
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <svg viewBox="0 0 24 24" fill="white">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                </div>
+                <h3>Location</h3>
+                <p>Visit our shop</p>
+                <p style="color: #667eea; font-weight: 600;">Ashok Nagar, Kurnool</p>
+            </div>
+        </div>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61756.09778718262!2d78.00116337910157!3d15.828608999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb5f7d12cda8f97%3A0x5ba0e48a8880c30f!2sKurnool%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Decent Imtiaz Tailors</h3>
+                <p>Your trusted partner for custom women's wear tailoring in Kurnool. Quality, precision, and style in every stitch.</p>
+                <div class="social-links">
+                    <!-- Phone Call -->
+  <a href="tel:+919951943986" title="Call Us">
+    <svg viewBox="0 0 24 24">
+      <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 
+      1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 
+      1V20a1 1 0 01-1 1C10.07 21 3 13.93 3 
+      5a1 1 0 011-1h3.5a1 1 0 011 
+      1c0 1.25.2 2.46.57 3.59a1 
+      1 0 01-.25 1.01l-2.2 2.19z"/>
+    </svg>
+  </a>
+                    <a href="https://wa.me/919951943986" target="_blank" title="WhatsApp">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
+    <p>&copy; 2026 Decent Imtiaz Tailors. All rights reserved.</p>
+
+     <!-- Right : Collabifyspace Branding -->
+    <div style="
+        display:flex;
+        flex-direction:column;
+        align-items:flex-end;
+        text-align:right;
+        line-height:1.4;
+    ">
+        <span style="font-size:0.9rem; font-weight:500;">
+            Designed with ❤️ by <strong>Collabifyspace</strong>
+        </span>
+
+        <span style="font-size:0.85rem; opacity:0.85;">
+            Want a website like this? <strong>Contact us</strong>
+        </span>
+
+        <a href="https://www.instagram.com/collabify_services_page?igsh=N2N1d2Q4ZTJ0bXQy" target="_blank" style="
+            display:inline-flex;
+            align-items:center;
+            gap:6px;
+            margin-top:4px;
+            font-size:0.85rem;
+            text-decoration:none;
+            color:inherit;
+        ">
+            <!-- Instagram Icon -->
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+            Instagram
+        </a>
+    </div>
+</div>
+
+
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Lightbox
+        const portfolioImages = [
+            'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=1200',
+            'https://images.unsplash.com/photo-1583391265899-e09df1caf877?w=1200',
+            'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=1200',
+            'https://images.unsplash.com/photo-1610030469990-686f7e9b07d6?w=1200',
+            'https://images.unsplash.com/photo-1591369822096-ffd140ec948f?w=1200',
+            'https://images.unsplash.com/photo-1583391733981-38b6e0a8945d?w=1200'
+        ];
+
+        function openLightbox(index) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = portfolioImages[index];
+            lightbox.classList.add('active');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+
+        // Close lightbox on background click
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLightbox();
+            }
+        });
+
+        // Reviews Slider
+        const reviewTrack = document.getElementById('reviewTrack');
+        const dotsContainer = document.getElementById('sliderDots');
+        const reviews = document.querySelectorAll('.review-card');
+        let currentReview = 0;
+
+        // Create dots
+        reviews.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToReview(index));
+            dotsContainer.appendChild(dot);
+        });
+
+        function goToReview(index) {
+            currentReview = index;
+            reviewTrack.style.transform = `translateX(-${currentReview * 100}%)`;
+            updateDots();
+        }
+
+        function updateDots() {
+            document.querySelectorAll('.dot').forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentReview);
+            });
+        }
+
+        function nextReview() {
+            currentReview = (currentReview + 1) % reviews.length;
+            goToReview(currentReview);
+        }
+
+        // Auto-slide every 5 seconds
+        setInterval(nextReview, 5000);
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe service cards and portfolio items
+        document.querySelectorAll('.service-card, .portfolio-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
